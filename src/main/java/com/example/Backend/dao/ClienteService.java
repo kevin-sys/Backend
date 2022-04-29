@@ -1,5 +1,5 @@
-package com.example.Backend;
-
+package com.example.Backend.dao;
+import com.example.Backend.model.Cliente;
 import java.util.List;
 
 public interface ClienteService {

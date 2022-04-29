@@ -1,4 +1,4 @@
-package com.example.Backend;
+package com.example.Backend.model;
 
 import javax.persistence.*;
 import lombok.AllArgsConstructor;
@@ -25,6 +25,8 @@ public class Cliente {
     private String Apellidos;
     @Column
     private String Identificacion;
+    
+    
     @Column
     private String CorreoElectronico;
     @Column
@@ -64,7 +66,7 @@ public class Cliente {
         return Identificacion;
     }
 
-    public void setCedula(String Identificacion) {
+    public void setIdentificacion(String Identificacion) {
         this.Identificacion = Identificacion;
     }
 

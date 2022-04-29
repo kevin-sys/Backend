@@ -1,5 +1,6 @@
-package com.example.Backend;
+package com.example.Backend.idao;
 
+import com.example.Backend.model.Cliente;
 import java.util.List;
 import org.springframework.data.repository.Repository;
 

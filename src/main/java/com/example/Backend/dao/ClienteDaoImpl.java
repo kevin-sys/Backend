@@ -1,5 +1,7 @@
-package com.example.Backend;
+package com.example.Backend.dao;
 
+import com.example.Backend.idao.IClienteDao;
+import com.example.Backend.model.Cliente;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

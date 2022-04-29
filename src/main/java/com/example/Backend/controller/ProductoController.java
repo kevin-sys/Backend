@@ -1,7 +1,7 @@
-package com.example.Backend;
+package com.example.Backend.controller;
 
-import com.example.Backend.Cliente;
-import com.example.Backend.ClienteService;
+import com.example.Backend.dao.ProductoService;
+import com.example.Backend.model.Producto;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -16,35 +16,36 @@ import org.springframework.web.bind.annotation.RestController;
 
 @CrossOrigin(origins = "http://localhost:4200", maxAge = 3600)
 @RestController
-@RequestMapping({"/clientes"})
-public class ClienteController {
+@RequestMapping({"/productos"})
+public class ProductoController {
 
     @Autowired
-    ClienteService service;
+    ProductoService service;
 
     @GetMapping
-    public List<Cliente> Listar() {
+    public List<Producto> Listar() {
         return service.listar();
     }
 
     @PostMapping
-    public Cliente Agregar(@RequestBody Cliente c) {
+    public Producto Agregar(@RequestBody Producto c) {
         return service.add(c);
     }
 
     @GetMapping(path = {"/{id}"})
-    public Cliente listarId(@PathVariable("id") int id) {
+    public Producto listarId(@PathVariable("id") int id) {
         return service.listarId(id);
     }
 
     @PutMapping(path = {"/{id}"})
-    public Cliente editar(@RequestBody Cliente c, @PathVariable("id") int id) {
+    public Producto editar(@RequestBody Producto c, @PathVariable("id") int id) {
         c.setId(id);
         return service.edit(c);
     }
 
     @DeleteMapping(path = {"/{id}"})
-    public Cliente delete(@PathVariable("id") int id) {
+    public Producto delete(@PathVariable("id") int id) {
         return service.delete(id);
     }
+
 }
